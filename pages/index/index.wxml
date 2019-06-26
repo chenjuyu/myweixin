@@ -3,7 +3,7 @@
 <view class="weui-cells weui-cells_after-title">
        <view class="weui-cell weui-cell_input">
                 <view class="weui-cell__hd">
-                    <view class="weui-label">用户名</view>
+                    <view class="weui-label">用户名{{returndata}}</view>
                 </view>
                 <view class="weui-cell__bd">
                     <input class="weui-input" placeholder="请输入用户名" id="username" auto-focus bindblur="inputb"/>
@@ -15,7 +15,7 @@
                     <view class="weui-label">密码</view>
                 </view>
                 <view class="weui-cell__bd">
-                    <input class="weui-input" placeholder="请输入密码" id="password" auto-focus bindblur="inputb"/>
+                <input class="weui-input" type="password" placeholder="请输入密码"  id="password" auto-focus bindblur="inputb"/>
                 </view>
             </view>     
   </view>   

@@ -5,6 +5,7 @@ const app = getApp()
 Page({
   data: {
     motto: 'Hello World',
+    returndata:'', //用于接收页面的返回值，在其他页面使用，本页接收值
     userInfo: {},
     username:'',
     password:'',
@@ -17,7 +18,9 @@ Page({
       url: '../logs/logs'
     })
   },
-  onLoad: function () {
+  onLoad: function (options) {
+ 
+
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -53,10 +56,15 @@ Page({
       hasUserInfo: true
     })
   },
-  submit:function(e){
+  showTopTips:function(e){
     console.log("提交事件")
     console.log(e)
-
+    wx.navigateTo({
+      url:'../goodsdetail/index', //'../leftSwiperDel/index?id=1',
+      success:function (){}        //成功后的回调；
+      ,fail:function(){}          //失败后的回调；
+      ,complete:function(){}      //结束后的回调(成功，失败都会执行)
+    })
 
   }
   ,inputb:function(e){
