@@ -2,6 +2,7 @@
 Page({
   data:{
     delBtnWidth:180//删除按钮宽度单位（rpx）
+    , tempImagePath:''
   },
   onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参数
@@ -113,7 +114,20 @@ Page({
       list:list
     });
   },
-  back:function(e){
+  //调用摄像头
+  paiItem :function(e){
+  //  this.setData({
+  //    ctx : wx.createCameraContext()
+   // })
+   // let { ctx, type, startRecord } = this.data;
+    // 拍照  
+   wx.navigateTo({
+     url: '../camera/index'
+     , complete:(e)=>{
+       console.log("页面的tempImagePath：" + this.data.tempImagePath)
+     }
+   }) 
+  ,back:function(e){
     console.log("e对象："+JSON.stringify(e))
     console.log("当前页"+getCurrentPages)
    var pages=getCurrentPages()
