@@ -3,7 +3,13 @@
     <view wx:for="{{list}}"  wx:key="{{index}}"  class="item" bindtap="back">
   
       <view bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" data-index="{{index}}" style="{{item.txtStyle}}" class="inner txt">
-      <image class="item-icon" mode="widthFix" src="{{item.icon}}"></image>{{item.txt}}</view>
+   <!--   <image class="item-icon" mode="widthFix" src="{{item.icon}}"></image> -->
+   
+    <image class="item-icon" mode="widthFix" wx:if="{{tempImagePath !=''}}"  src="{{tempImagePath}}"></image>{{item.txt}}</view>
+      
+      {{item.txt}}
+      
+      </view>
       <view data-index="{{index}}" bindtap = "delItem" class="inner pai">拍照</view>
       <view data-index="{{index}}" bindtap = "delItem" class="inner del">删除</view>
     </view>
